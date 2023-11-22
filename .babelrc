@@ -1,0 +1,6 @@
+// 解析
+{
+  "presets":[
+    "@babel/preset-env"
+  ]
+}

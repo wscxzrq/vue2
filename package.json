@@ -1,0 +1,28 @@
+{
+  "name": "vue2",
+  "version": "1.0.0",
+  "description": "学习手写vue2",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wscxzrq/vue2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wscxzrq/vue2/issues"
+  },
+  "homepage": "https://github.com/wscxzrq/vue2#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-serve": "^2.0.2"
+  }
+}
