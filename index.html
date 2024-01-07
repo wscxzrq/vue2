@@ -17,17 +17,18 @@
       //   message2: 'hello2'
       // }
       data() {
-        console.log('this',this)
         return {
           msg: 'hello',
           a: {
             b:'b'
-          }
+          },
+          list:[1,2,3]
         }
       }
     })
 
     vm._data.a.c = 30
+    vm._data.list.push(10)
     console.log('vm',vm._data)
   </script>
 </body>

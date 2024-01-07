@@ -1,3 +1,4 @@
+import {ArrayMethods} from './arr'
 export function observer(data) {
   // 如果不是对象或是空对象
   if(typeof data != 'object' || data == null) {
@@ -10,7 +11,15 @@ export function observer(data) {
 
 class Observer {
   constructor(value) {
-    this.walk(value); // 遍历对象
+    // 判断是数组还是对象
+    if(Array.isArray(value)) {
+      value.__proto__ = ArrayMethods;
+
+      // 如果是数组对象
+      this.observerArray(value); 
+    }else {
+      this.walk(value); // 遍历对象
+    }
   }
 
   walk (data) {
@@ -21,6 +30,13 @@ class Observer {
       let value = data[key];
       defineReactive(data,key,value);
     }
+  }
+
+  /**
+   * 数组对象的劫持
+   */
+  observerArray(value) {
+    
   }
 }
 
