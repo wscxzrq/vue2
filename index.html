@@ -12,23 +12,20 @@
   <script>
     let vm = new Vue({
       el: '#app',
-      // data: {
-      //   message: 'hello',
-      //   message2: 'hello2'
-      // }
       data() {
         return {
-          msg: 'hello',
-          a: {
-            b:'b'
-          },
-          list:[1,2,3]
+          // msg: 'hello',
+          // arr: {
+          //   b:'b'
+          // },
+          // list:[1,2,3]
+          obj:[{a:1}]
         }
       }
     })
 
-    vm._data.a.c = 30
-    vm._data.list.push(10)
+    // vm._data.arr.c = 30
+    // vm._data.list.push({c:6})
     console.log('vm',vm._data)
   </script>
 </body>

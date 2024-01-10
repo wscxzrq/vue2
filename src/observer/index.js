@@ -11,10 +11,14 @@ export function observer(data) {
 
 class Observer {
   constructor(value) {
+    // 给 value 定义一个属性
+    Object.defineProperty(value,'__ob__',{
+      enumerable:false,
+      value:this
+    })
     // 判断是数组还是对象
     if(Array.isArray(value)) {
       value.__proto__ = ArrayMethods;
-
       // 如果是数组对象
       this.observerArray(value); 
     }else {
@@ -23,6 +27,7 @@ class Observer {
   }
 
   walk (data) {
+    console.log('data',data)
     let keys = Object.keys(data);
     for(let i = 0; i<keys.length; i++) {
       // 对每个属性进行劫持
@@ -36,7 +41,9 @@ class Observer {
    * 数组对象的劫持
    */
   observerArray(value) {
-    
+    for(let i = 0; i<value.length; i++) {
+      observer(value[i]);
+    }
   }
 }
 
