@@ -27,7 +27,6 @@ class Observer {
   }
 
   walk (data) {
-    console.log('data',data)
     let keys = Object.keys(data);
     for(let i = 0; i<keys.length; i++) {
       // 对每个属性进行劫持

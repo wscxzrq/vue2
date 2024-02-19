@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">hello</div>
+  <div id="app">hello {{ msg }}</div>
   <script src="dist/vue.js"></script>
 
   <script>
@@ -14,7 +14,7 @@
       el: '#app',
       data() {
         return {
-          // msg: 'hello',
+          msg: 'hello',
           // arr: {
           //   b:'b'
           // },
@@ -23,10 +23,29 @@
         }
       }
     })
-
+    // .$mount("#app")
     // vm._data.arr.c = 30
     // vm._data.list.push({c:6})
-    console.log('vm',vm._data)
+    // console.log('vm',vm.msg)
+
+    /*
+      vue 初次渲染的流程
+      1. 初始化数据
+      2. 将模板进行编译
+      3. 变成 render 函数
+      4. 生成虚拟节点
+      5. 生成真实 DOM
+      6. 放到页面上
+    */
+
+    /***
+     * vue 模板编译的方式
+     * template render el
+     * el 必须要有
+     * 如果有 render() 有 template 先走 render() 
+     * 如果没有 render() 有 template 先走 template
+     * 如果 render() 于 template 都没有 先走 el
+     */
   </script>
 </body>
 </html>
