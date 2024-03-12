@@ -1,5 +1,6 @@
 import { initState } from "./initState";
-import {compileToFunction} from '../src/compile/index';
+import {mounetComponent} from './lifeCycle';
+import {compileToFunction} from './compile/index'
 // 初始化
 export function initMixin(Vue) {
   Vue.prototype._init = function(options) {
@@ -24,12 +25,15 @@ export function initMixin(Vue) {
       let template = options.template;
       if(!template && el) { // 没有 template 但是有 el
         el = el.outerHTML;
-        console.log('el',el)
-
         // 变成 ast 语法树
-        let ast = compileToFunction(el);
+        let render = compileToFunction(el);
+        // 将 render 函数变成 虚拟 dom vnode()
+        options.render = render;
+        // 将 vnode 变成真实 dom放到页面上去
       }
     }
+    // 挂载组件
+    mounetComponent(vm,el);
   }
 
 }

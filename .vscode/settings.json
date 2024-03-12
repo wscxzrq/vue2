@@ -1,0 +1,66 @@
+// settings.json
+{
+  "recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"],
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.vue": "vue"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "editor.tabSize": 2,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vetur.format.scriptInitialIndent": true, // 对 script 统一格式化
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_line_length": 300,
+      "wrap_attributes": "auto",
+      "end_with_newline": false,
+      "semi": false,
+      "singleQuote": true
+    },
+
+    "prettier": {
+      "singleQuote": true,
+      "semi": false,
+      "printWidth": 300,
+      "wrapAttributes": true,
+      "sortAttributes": false,
+      "trailingComma": "none"
+    },
+    "prettyhtml": {
+      "printWidth": 300,
+      "semi": false,
+      "singleQuote": false,
+      "wrapAttributes": false,
+      "sortAttributes": false
+    }
+  },
+
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  // 设置编译器默认使用vetur方式格式化代码
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "diffEditor.wordWrap": "off",
+  "cSpell.words": [
+    "antd"
+  ],
+  // 对文件进行编组
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "*.json, *.config.js, *.config.ts,*.cjs",
+    "README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig,LICENSE,pnpm*,.npm*"
+  },
+  // 关闭 vetur 导致的奇怪报错
+  "vetur.validation.template": false,
+  "vetur.validation.script": false,
+  "vetur.validation.style": false,
+  
+}
