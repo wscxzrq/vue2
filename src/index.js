@@ -1,6 +1,7 @@
-import { initMixin } from "./init";
-import { renderMixin } from "./vnode/index";
-import { lifeCycleMixin } from "./lifeCycle";
+import { initMixin } from './init';
+import { renderMixin } from './vnode/index';
+import { lifeCycleMixin } from './lifeCycle';
+import { InitGlobApi } from './global-api/index';
 
 function Vue(option) {
   // new Vue 对 option 进行初始化
@@ -10,6 +11,8 @@ function Vue(option) {
 initMixin(Vue);
 // 对生命周期进行初始化
 lifeCycleMixin(Vue);
-// 添加 _render 
+// 添加 _render
 renderMixin(Vue);
-export default Vue
+// 全局方法 Vue.mixin Vue.component Vue.extend
+InitGlobApi(Vue);
+export default Vue;

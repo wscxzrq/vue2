@@ -1,3 +1,4 @@
+import { patch } from './vnode/patch';
 // 渲染组件挂载组件的方法
 export function mounetComponent(vm, el) {
   /**
@@ -9,5 +10,9 @@ export function mounetComponent(vm, el) {
 
 // 生命周期
 export function lifeCycleMixin(Vue) {
-  Vue.prototype._update = function (vnode) {};
+  Vue.prototype._update = function (vnode) {
+    let vm = this;
+    // 两个参数 1. 旧的 dom 2. vnode
+    vm.$el = patch(vm.$el, vnode);
+  };
 }

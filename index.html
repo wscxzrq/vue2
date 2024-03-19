@@ -6,15 +6,18 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app" style="color:red;font-size:12px;">hello {{ msg }}1111{{xujie}}</div>
+  <div id="app" style="color:red;font-size:12px;">hello {{ msg }}1111<h2>{{xujie}}</h2></div>
   <script src="dist/vue.js"></script>
 
   <script>
+    Vue.Mixin({
+      created() {}
+    })
     let vm = new Vue({
       el: '#app',
       data() {
         return {
-          msg: 'hello',
+          msg: 'msg',
           xujie:'my name is xujie'
           // arr: {
           //   b:'b'
@@ -47,6 +50,14 @@
      * 如果没有 render() 有 template 先走 template
      * 如果 render() 于 template 都没有 先走 el
      */
+
+     /***
+      * vue 声明周期 实现原理 源码实现
+      * (1) Vue.mixin({}) 混入
+      * (2) 设计模式 订阅发布 vue
+     */
+
+    
   </script>
 </body>
 </html>
