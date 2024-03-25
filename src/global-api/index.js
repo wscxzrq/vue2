@@ -8,6 +8,7 @@ export function InitGlobApi(Vue) {
   Vue.options = {};
   Vue.Mixin = function (mixin) {
     // 对象的合并
-    mergeOptions(this.options, mixin);
+    this.options = mergeOptions(this.options, mixin);
+    console.log('Vue.$options', Vue.$options);
   };
 }

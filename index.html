@@ -11,20 +11,24 @@
 
   <script>
     Vue.Mixin({
-      created() {}
+      created:function a() {}
+    })
+    Vue.Mixin({
+      created:function b() {}
     })
     let vm = new Vue({
       el: '#app',
       data() {
         return {
           msg: 'msg',
-          xujie:'my name is xujie'
-          // arr: {
-          //   b:'b'
-          // },
-          // list:[1,2,3]
-          // obj:[{a:1}]
+          xujie:'my name is xujie',
+          a:{b:20},
+          list:[1,2,3],
+          arr:[{a:1}],
         }
+      },
+      created() {
+        console.log('created')
       }
     })
     // .$mount("#app")
